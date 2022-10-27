@@ -52,6 +52,16 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'user.backends.JWTAuth',
+    ),
+}
+
+
 ROOT_URLCONF = 'unversity_system.urls'
 
 TEMPLATES = [

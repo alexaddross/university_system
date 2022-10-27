@@ -24,4 +24,4 @@ class StudyingDirection(models.Model):
     id = models.UUIDField(uuid.uuid4(), primary_key=True)
     name = models.CharField(max_length=255)
     disciplines = models.ForeignKey(Discipline, on_delete=models.SET_NULL, null=True)
-    groups = models.ManyToManyField(StudentGroup)
+    groups = models.ForeignKey(StudentGroup, on_delete=models.SET_NULL, null=True)
